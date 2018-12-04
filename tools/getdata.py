@@ -24,7 +24,7 @@ with open(args.template, 'r') as file :
 # lets get the data
 scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
 
-credentials = ServiceAccountCredentials.from_json_keyfile_name('prjmgr-weekly1-b01f85eb9ee8.json', scope)
+credentials = ServiceAccountCredentials.from_json_keyfile_name('prjmgr-weekly1-58b6b1dd623f.json', scope)
 
 gc = gspread.authorize(credentials)
 
