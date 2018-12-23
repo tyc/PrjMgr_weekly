@@ -2,6 +2,7 @@ import gspread
 import os
 import sys
 import fileinput
+import unicodedata as ud
 from oauth2client.service_account import ServiceAccountCredentials
 from shutil import copyfile
 from argparse import ArgumentParser
@@ -67,5 +68,6 @@ filedata = filedata.replace('%%_A4_POST_TWITTER_SHARE_%%', wks1.acell('b46').val
 
 # Write the file out again
 with open(args.outfile, 'w') as file:
-  file.write(filedata)
+  fileout = ud.normalize('NFKD', filedata)
+  file.write(fileout)
 
